@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width,
+        initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" 
+        rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" 
+        crossorigin="anonymous">
+    <title>Forum</title>
+    </head>
+
+    <body>
+        <div class="container">
+            <h1 class="mb-4" style="font-family: 'Avenir Light';color:rgb(65, 65, 65)"><b>FORUM</b> POSTS</h1>
+            <a href="/posts/new" class="btn btn-success" style="background-color: springgreen; color: rgb(65, 65, 65); font-family: Avenir Light; border: none;"> New Post</a>
+           
+            <% posts.forEach(post => { %> 
+                <div class="card mt-4" style="background-color: darkgray"> 
+                    <div class="card-body">
+                        <h4 class="card-title" style="font-family:'Avenir Black'; color:springgreen"><%= post.title %></h4>
+                        <div class="card-subtitle text-muted mb-2"> 
+                            <%= post.createdAt.toLocaleDateString() %>
+                        </div>
+                        <div class="card-text mb-2" style="color: white; font-family: Avenir Light;"><%= post.description %> 
+                    </div>
+                </div>
+                <%}) %>
+        </div>
+    </body>
+</html>
